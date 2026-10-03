@@ -4,7 +4,7 @@ service cloud.firestore {
     match /portfolioFiles/{fileId} {
       allow read: if true;
       allow create, update, delete: if request.auth != null
-        && request.auth.token.email == "your-owner-email@example.com";
+        && request.auth.token.email == "admin";
     }
   }
 }
